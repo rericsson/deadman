@@ -1,7 +1,8 @@
 pylint
-ipython
 pytest
 pytest-cov
 click
 flask
 black
+schema
+python-dotenv

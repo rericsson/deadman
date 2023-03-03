@@ -2,14 +2,13 @@ install:
 	pip install --upgrade pip &&\
 		pip install -r requirements.txt
 
-test:
-	python -m pytest -vv --cov=mylib --cov=hello test_hello.py
-
-
 lint:
-	pylint --disable=R,C hello.py mylib/*.py
+	pylint --disable=R,C app/*.py testing/*.py
 
 format:
-	black *.py mylib/*.py
+	black app/*.py testing/*.py
 
-all: install lint test
+run:
+	flask --app hello run
+
+all: install lint format run 
